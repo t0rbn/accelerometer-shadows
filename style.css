@@ -1,0 +1,35 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: hsl(0, 0%, 90%);
+}
+
+.foo {
+    --shadow-direction: 45deg;
+    --shadow-size: 1rem;
+    --shadow-blur: 1rem;
+
+    --default-shadow: calc(-1 * var(--shadow-size) * cos(var(--shadow-direction))) calc(-1 *var(--shadow-size) * sin(var(--shadow-direction))) var(--shadow-blur) hsl(0, 0%, 70%),
+    calc(-.25 * var(--shadow-size) * cos(var(--shadow-direction))) calc(-.25 *var(--shadow-size) * sin(var(--shadow-direction))) calc(.5 * var(--shadow-blur)) hsl(0, 0%, 100%) inset;
+}
+
+main {
+    padding: 10rem;
+
+    .card {
+        width: 10rem;
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        background-color: hsl(0, 50%, 80%);
+        box-shadow: var(--default-shadow);
+        border-radius: 2rem;
+    }
+}
+
+
+
+
