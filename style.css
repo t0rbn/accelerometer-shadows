@@ -4,13 +4,14 @@ html, body {
     background-color: hsl(0, 0%, 90%);
 }
 
-.foo {
-    --shadow-direction: 45deg;
+.shadowContainer {
+    --shadow-direction-offset: -45deg;
+    --shadow-direction: 0deg;
     --shadow-size: 1rem;
     --shadow-blur: 1rem;
 
-    --default-shadow: calc(-1 * var(--shadow-size) * cos(var(--shadow-direction))) calc(-1 *var(--shadow-size) * sin(var(--shadow-direction))) var(--shadow-blur) hsl(0, 0%, 70%),
-    calc(-.25 * var(--shadow-size) * cos(var(--shadow-direction))) calc(-.25 *var(--shadow-size) * sin(var(--shadow-direction))) calc(.5 * var(--shadow-blur)) hsl(0, 0%, 100%) inset;
+    --default-shadow: calc(-1 * var(--shadow-size) * cos(var(--shadow-direction) + var(--shadow-direction-offset))) calc(-1 *var(--shadow-size) * sin(var(--shadow-direction) + var(--shadow-direction-offset))) var(--shadow-blur) hsl(0, 0%, 70%),
+    calc(-.25 * var(--shadow-size) * cos(var(--shadow-direction) + var(--shadow-direction-offset))) calc(-.25 *var(--shadow-size) * sin(var(--shadow-direction) + var(--shadow-direction-offset))) calc(.5 * var(--shadow-blur)) hsl(0, 0%, 100%) inset;
 }
 
 main {
@@ -29,7 +30,3 @@ main {
         border-radius: 2rem;
     }
 }
-
-
-
-
