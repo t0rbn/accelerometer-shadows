@@ -1,3 +1,3 @@
 window.addEventListener("deviceorientation", (e) => {
-    document.querySelectorAll('.foo').forEach(x => x.style.setProperty('--shadow-direction', `${e.alpha}deg`))
+    document.querySelectorAll('.shadowContainer').forEach(x => x.style.setProperty('--shadow-direction', `${e.alpha}deg`))
 }, true);
